@@ -1,0 +1,46 @@
+# Financial assumptions for EV Charging Infrastructure
+# All figures in INR (₹) or standard financial ratios.
+# Label in UI: [ASSUMPTION - Configurable via config/financials.yaml]
+
+hardware_costs:
+  DC_FAST_60KW:
+    name: "Dual Gun 60kW CCS2 DC Fast Charger"
+    unit_cost_inr: 850000 # ₹8.5 Lakh
+    rated_kw: 60.0
+    guns: 2
+    maintenance_pct_year: 0.08
+  DC_FAST_120KW:
+    name: "Dual Gun 120kW CCS2 Ultra-Fast Charger"
+    unit_cost_inr: 1600000 # ₹16.0 Lakh
+    rated_kw: 120.0
+    guns: 2
+    maintenance_pct_year: 0.08
+  AC_DUAL_22KW:
+    name: "Dual Gun 22kW Type 2 AC Fast Charger"
+    unit_cost_inr: 180000 # ₹1.8 Lakh
+    rated_kw: 22.0
+    guns: 2
+    maintenance_pct_year: 0.05
+
+installation_and_grid:
+  base_civil_works_inr: 150000 # ₹1.5 Lakh per site
+  permitting_and_signage_inr: 50000 # ₹50k per site
+  grid_transformer_base_inr: 200000 # ₹2.0 Lakh base connection
+  grid_cable_cost_per_meter_inr: 450 # ₹450 / meter from nearest substation
+  software_cms_annual_inr: 25000 # ₹25k / year cloud CMS license
+
+operational_costs:
+  electricity_tariff_per_kwh_inr: 7.20 # APERC EV Commercial Tariff ₹7.20/kWh
+  land_lease_annual_inr: 120000 # ₹10,000 / month lease rent
+  network_insurance_annual_inr: 30000 # ₹30k / year
+
+revenue_model:
+  retail_price_per_kwh_inr: 16.50 # ₹16.50/kWh customer tariff
+  parking_service_fee_per_session_inr: 50.0 # Flat service fee
+  average_kwh_per_session_dc: 28.0 # Average 28 kWh delivered per DC fast session
+  average_kwh_per_session_ac: 14.0 # Average 14 kWh delivered per AC session
+
+growth_and_discount:
+  discount_rate: 0.10 # 10% WACC
+  annual_demand_growth_pct: 0.22 # 22% YoY EV adoption in AP
+  operational_days_year: 365

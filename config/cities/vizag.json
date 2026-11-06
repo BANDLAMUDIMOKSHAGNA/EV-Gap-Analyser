@@ -1,0 +1,37 @@
+{
+  "id": "vizag",
+  "name": "Visakhapatnam",
+  "state": "Andhra Pradesh",
+  "country": "India",
+  "lat_center": 17.7231,
+  "lon_center": 83.3013,
+  "default_h3_res": 8,
+  "rto_codes": ["AP-31", "AP-32", "AP-33", "AP-34"],
+  "bbox": {
+    "min_lon": 83.15,
+    "min_lat": 17.62,
+    "max_lon": 83.42,
+    "max_lat": 17.85
+  },
+  "boundary_polygon": [
+    [83.15, 17.62],
+    [83.35, 17.62],
+    [83.42, 17.75],
+    [83.38, 17.85],
+    [83.25, 17.85],
+    [83.15, 17.75],
+    [83.15, 17.62]
+  ],
+  "zones": [
+    {"name": "Dwaraka Nagar / RTC Hub", "lat": 17.728, "lon": 83.303, "type": "commercial"},
+    {"name": "Siripuram / AU", "lat": 17.722, "lon": 83.317, "type": "institutional"},
+    {"name": "MVP Colony", "lat": 17.742, "lon": 83.335, "type": "residential_high"},
+    {"name": "Madhurawada IT SEZ", "lat": 17.808, "lon": 83.354, "type": "tech_park"},
+    {"name": "Rushikonda IT Hill", "lat": 17.782, "lon": 83.381, "type": "coastal_tech"},
+    {"name": "Gajuwaka Industrial", "lat": 17.691, "lon": 83.218, "type": "industrial"},
+    {"name": "Pendurthi Junction", "lat": 17.818, "lon": 83.205, "type": "transit_fringe"},
+    {"name": "Vizag Port / Scindia", "lat": 17.689, "lon": 83.279, "type": "logistics"},
+    {"name": "Beach Road Corridor", "lat": 17.712, "lon": 83.322, "type": "tourism_recreational"},
+    {"name": "NAD Kotha Road", "lat": 17.741, "lon": 83.238, "type": "transport_junction"}
+  ]
+}

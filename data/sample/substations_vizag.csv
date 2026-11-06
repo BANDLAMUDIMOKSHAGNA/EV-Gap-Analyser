@@ -1,0 +1,11 @@
+id,name,lat,lon,voltage_kv,capacity_mva
+sub_01,33/11kV Substation Dwaraka Nagar,17.7295,83.3052,33,16.0
+sub_02,132/33kV Substation Siripuram,17.7208,83.3195,132,50.0
+sub_03,33/11kV Substation MVP Colony,17.7441,83.3362,33,16.0
+sub_04,220/132kV Substation Gajuwaka,17.6885,83.214,220,100.0
+sub_05,33/11kV Substation NAD Kotha Road,17.743,83.2355,33,25.0
+sub_06,33/11kV Substation Madhurawada IT,17.8105,83.3565,33,20.0
+sub_07,33/11kV Substation Rushikonda,17.781,83.378,33,16.0
+sub_08,33/11kV Substation Scindia Port,17.687,83.282,33,25.0
+sub_09,33/11kV Substation Pendurthi,17.82,83.208,33,16.0
+sub_10,33/11kV Substation Gopalapatnam,17.755,83.22,33,16.0

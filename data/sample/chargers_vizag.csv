@@ -1,0 +1,11 @@
+id,name,operator,lat,lon,connector_types,power_kw,charger_type,status,source
+chg_vz_001,Tata Power EZ Charge - Novotel Beach Road,Tata Power,17.7124,83.3228,"CCS2,Type 2",60.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_002,Jio-bp Pulse - Dwaraka Nagar RTC Complex,Jio-bp,17.7289,83.3031,"CCS2,Bharat DC001",60.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_003,Statiq Charging Hub - CMR Central Mall,Statiq,17.7345,83.315,"CCS2,Type 2",50.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_004,Ather Grid - Siripuram Circle,Ather Energy,17.7221,83.3174,"Ather Dot,Type 2",22.0,AC_TYPE2,OPERATIONAL,OSM
+chg_vz_005,APEPDCL EV Station - NAD Kotha Road Junction,APEPDCL,17.741,83.2382,"CCS2,Type 2",60.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_006,"Fortum Charge & Drive - HPCL Fuel Outlet, Gajuwaka",Fortum,17.6912,83.2185,"CCS2,CHAdeMO",50.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_007,Tata Power EZ Charge - MVP Colony Sector 4,Tata Power,17.7428,83.3351,"Type 2,CCS2",30.0,DC_FAST,OPERATIONAL,OSM
+chg_vz_008,Zeon Charging - Rushikonda Beach Resort,Zeon,17.7825,83.3812,CCS2,60.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_009,"IOCL EV Point - Scindia Junction, Port Road",Indian Oil,17.689,83.2794,"CCS2,Bharat DC001",30.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
+chg_vz_010,ChargeZone - Vizag Railway Station West Entry,ChargeZone,17.721,83.2965,"CCS2,Type 2",60.0,DC_FAST,OPERATIONAL,BEE_REGISTRY
