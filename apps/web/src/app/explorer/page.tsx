@@ -1,12 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { useQuery } from "@tanstack/react-query";
 import { fetchChargers, fetchCells } from "@/lib/api";
-import MapView from "@/components/map/MapView";
 import StationDrawer from "@/components/drawer/StationDrawer";
 import { ChargerProperties } from "@/types";
 import { Filter, Layers, Zap, MapPin, RefreshCw, AlertCircle } from "lucide-react";
+
+const MapView = dynamic(() => import("@/components/map/MapView"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 text-sm font-medium">
+      Loading interactive map...
+    </div>
+  ),
+});
 
 export default function ExplorerPage() {
   const [selectedCharger, setSelectedCharger] = useState<ChargerProperties | null>(null);
