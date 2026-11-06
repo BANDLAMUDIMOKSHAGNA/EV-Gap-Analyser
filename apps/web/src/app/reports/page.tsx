@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { formatINR, formatDate } from "@/lib/formatters";
 import { Scenario, AnalysisRun } from "@/types";
+import { getApiUrl } from "@/lib/api";
 import {
   FileText,
   Download,
@@ -17,15 +18,13 @@ import {
   ExternalLink
 } from "lucide-react";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
 export default function ReportsPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const { data: scenarios, isLoading: scenLoading } = useQuery<Scenario[]>({
     queryKey: ["scenarios"],
     queryFn: async () => {
-      const res = await fetch(`${API_BASE}/api/v1/scenarios`);
+      const res = await fetch(getApiUrl("/api/v1/scenarios"));
       if (!res.ok) throw new Error("Failed to load scenarios");
       return res.json();
     },
@@ -34,7 +33,7 @@ export default function ReportsPage() {
   const { data: runs, isLoading: runsLoading } = useQuery<AnalysisRun[]>({
     queryKey: ["runs", "vizag"],
     queryFn: async () => {
-      const res = await fetch(`${API_BASE}/api/v1/runs?city_id=vizag`);
+      const res = await fetch(getApiUrl("/api/v1/runs?city_id=vizag"));
       if (!res.ok) throw new Error("Failed to load runs");
       return res.json();
     },
@@ -115,14 +114,14 @@ export default function ReportsPage() {
 
               <div className="flex items-center space-x-2 pt-2">
                 <a
-                  href={`${API_BASE}/api/v1/export/${s.run_id}?format=geojson`}
+                  href={getApiUrl(`/api/v1/export/${s.run_id}?format=geojson`)}
                   className="flex-1 py-1.5 px-3 rounded-md bg-slate-100 hover:bg-slate-200 text-neutral-text font-semibold text-xs text-center transition-colors flex items-center justify-center space-x-1"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>GeoJSON</span>
                 </a>
                 <a
-                  href={`${API_BASE}/api/v1/export/${s.run_id}?format=csv`}
+                  href={getApiUrl(`/api/v1/export/${s.run_id}?format=csv`)}
                   className="flex-1 py-1.5 px-3 rounded-md bg-slate-100 hover:bg-slate-200 text-neutral-text font-semibold text-xs text-center transition-colors flex items-center justify-center space-x-1"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -163,14 +162,14 @@ export default function ReportsPage() {
                   <td className="py-3 px-4 font-mono">{r.scored_cells_count || 738} cells</td>
                   <td className="py-3 px-4 text-right space-x-2">
                     <a
-                      href={`${API_BASE}/api/v1/export/${r.id}?format=csv`}
+                      href={getApiUrl(`/api/v1/export/${r.id}?format=csv`)}
                       className="inline-flex items-center space-x-1 px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-neutral-text font-medium"
                     >
                       <Download className="w-3 h-3" />
                       <span>CSV</span>
                     </a>
                     <a
-                      href={`${API_BASE}/api/v1/export/${r.id}?format=geojson`}
+                      href={getApiUrl(`/api/v1/export/${r.id}?format=geojson`)}
                       className="inline-flex items-center space-x-1 px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-neutral-text font-medium"
                     >
                       <Download className="w-3 h-3" />

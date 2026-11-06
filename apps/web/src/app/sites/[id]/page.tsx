@@ -3,6 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
+import { getApiUrl } from "@/lib/api";
 import { formatINR } from "@/lib/formatters";
 import {
   FileText,
@@ -17,8 +18,6 @@ import {
   AlertTriangle
 } from "lucide-react";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
 export default function SiteReportPage() {
   const params = useParams();
   const siteId = params?.id as string;
@@ -26,7 +25,7 @@ export default function SiteReportPage() {
   const { data: report, isLoading } = useQuery({
     queryKey: ["site-report", siteId],
     queryFn: async () => {
-      const res = await fetch(`${API_BASE}/api/v1/sites/${siteId}/report`);
+      const res = await fetch(getApiUrl(`/api/v1/sites/${siteId}/report`));
       if (!res.ok) throw new Error("Failed to load site report");
       return res.json();
     },
@@ -85,7 +84,7 @@ export default function SiteReportPage() {
             <span>Share</span>
           </button>
           <a
-            href={`${API_BASE}/api/v1/sites/${siteId}/report.pdf`}
+            href={getApiUrl(`/api/v1/sites/${siteId}/report.pdf`)}
             className="px-4 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-colors flex items-center space-x-1.5 shadow-sm"
           >
             <Download className="w-3.5 h-3.5" />

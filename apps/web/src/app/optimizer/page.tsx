@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { fetchCells, fetchChargers } from "@/lib/api";
+import { fetchCells, fetchChargers, getApiUrl } from "@/lib/api";
 import MapView from "@/components/map/MapView";
 import { formatINR } from "@/lib/formatters";
 import {
@@ -31,8 +31,6 @@ import {
   CartesianGrid
 } from "recharts";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
 export default function BudgetOptimizerPage() {
   const [budgetINR, setBudgetINR] = useState<number>(3500000); // ₹35 Lakh default
   const [stationCount, setStationCount] = useState<number>(3);
@@ -55,12 +53,12 @@ export default function BudgetOptimizerPage() {
   // Optimisation Mutation
   const optimizeMutation = useMutation({
     mutationFn: async (params: { budget: number; nSites: number; type: string }) => {
-      const runsRes = await fetch(`${API_BASE}/api/v1/runs?city_id=vizag`);
+      const runsRes = await fetch(getApiUrl("/api/v1/runs?city_id=vizag"));
       const runs = await runsRes.json();
       const runId = runs[0]?.id;
       if (!runId) throw new Error("No run found");
 
-      const res = await fetch(`${API_BASE}/api/v1/runs/${runId}/optimise`, {
+      const res = await fetch(getApiUrl(`/api/v1/runs/${runId}/optimise`), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -84,7 +82,7 @@ export default function BudgetOptimizerPage() {
       const opt = optimizeMutation.data;
       if (!opt) return;
 
-      const res = await fetch(`${API_BASE}/api/v1/scenarios`, {
+      const res = await fetch(getApiUrl("/api/v1/scenarios"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

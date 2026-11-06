@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { CandidateSite } from "@/types";
+import { getApiUrl } from "@/lib/api";
 import { formatINR } from "@/lib/formatters";
 import {
   Sliders,
@@ -19,8 +20,6 @@ import {
   MapPin,
   CheckCircle2
 } from "lucide-react";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 const DEFAULT_WEIGHTS: Record<string, number> = {
   demand: 30,
@@ -44,12 +43,12 @@ export default function SiteRankingPage() {
   const rankMutation = useMutation({
     mutationFn: async (w: Record<string, number>) => {
       // First get latest run ID
-      const runsRes = await fetch(`${API_BASE}/api/v1/runs?city_id=vizag`);
+      const runsRes = await fetch(getApiUrl("/api/v1/runs?city_id=vizag"));
       const runs = await runsRes.json();
       const runId = runs[0]?.id;
       if (!runId) throw new Error("No run found");
 
-      const res = await fetch(`${API_BASE}/api/v1/runs/${runId}/rank`, {
+      const res = await fetch(getApiUrl(`/api/v1/runs/${runId}/rank`), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ weights: w }),
