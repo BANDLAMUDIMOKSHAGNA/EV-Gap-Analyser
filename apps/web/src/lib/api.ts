@@ -6,7 +6,7 @@ import {
   AnalysisRun,
   CandidateSite,
   Scenario
-} from "@/types";
+} from "../types";
 
 /**
  * Resolves the target API URL for an endpoint path.

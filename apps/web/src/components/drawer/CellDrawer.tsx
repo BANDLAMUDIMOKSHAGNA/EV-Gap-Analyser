@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { CellProperties } from "@/types";
+import { CellProperties } from "../../types";
 import { X, BatteryCharging, Users, Car, Zap, MapPin, ArrowRight, ShieldCheck } from "lucide-react";
-import { formatDistanceKm, formatMinutes, formatIndianNumber } from "@/lib/formatters";
+import { formatDistanceKm, formatMinutes, formatIndianNumber } from "../../lib/formatters";
 
 interface CellDrawerProps {
   cell: CellProperties | null;

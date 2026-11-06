@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchDatasets } from "@/lib/api";
-import { formatDate } from "@/lib/formatters";
+import { fetchDatasets } from "../../lib/api";
+import { formatDate } from "../../lib/formatters";
 import { ShieldCheck, Database, ExternalLink, Calendar, FileText, CheckCircle2 } from "lucide-react";
 
 export default function DatasetsPage() {

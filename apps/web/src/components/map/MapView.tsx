@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
-import { CellFeatureCollection, ChargerFeatureCollection, CandidateSite } from "@/types";
+import { CellFeatureCollection, ChargerFeatureCollection, CandidateSite } from "../../types";
 
 interface MapViewProps {
   cells?: CellFeatureCollection;

@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { fetchCities, fetchRuns, fetchChargers, fetchCells } from "@/lib/api";
-import { formatIndianNumber } from "@/lib/formatters";
+import { fetchCities, fetchRuns, fetchChargers, fetchCells } from "../lib/api";
+import { formatIndianNumber } from "../lib/formatters";
 import {
   Car,
   Zap,

@@ -3,8 +3,8 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { getApiUrl } from "@/lib/api";
-import { formatINR } from "@/lib/formatters";
+import { getApiUrl } from "../../../lib/api";
+import { formatINR } from "../../../lib/formatters";
 import {
   FileText,
   Download,

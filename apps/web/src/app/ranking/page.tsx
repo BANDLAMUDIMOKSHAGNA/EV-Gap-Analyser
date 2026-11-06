@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { CandidateSite } from "@/types";
-import { getApiUrl } from "@/lib/api";
-import { formatINR } from "@/lib/formatters";
+import { CandidateSite } from "../../types";
+import { getApiUrl } from "../../lib/api";
+import { formatINR } from "../../lib/formatters";
 import {
   Sliders,
   RotateCcw,

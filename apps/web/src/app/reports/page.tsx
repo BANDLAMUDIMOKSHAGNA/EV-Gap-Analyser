@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { formatINR, formatDate } from "@/lib/formatters";
-import { Scenario, AnalysisRun } from "@/types";
-import { getApiUrl } from "@/lib/api";
+import { formatINR, formatDate } from "../../lib/formatters";
+import { Scenario, AnalysisRun } from "../../types";
+import { getApiUrl } from "../../lib/api";
 import {
   FileText,
   Download,

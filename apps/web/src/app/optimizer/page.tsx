@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { fetchCells, fetchChargers, getApiUrl } from "@/lib/api";
-import MapView from "@/components/map/MapView";
-import { formatINR } from "@/lib/formatters";
+import { fetchCells, fetchChargers, getApiUrl } from "../../lib/api";
+import MapView from "../../components/map/MapView";
+import { formatINR } from "../../lib/formatters";
 import {
   Calculator,
   DollarSign,

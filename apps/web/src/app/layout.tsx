@@ -1,8 +1,8 @@
 import "./globals.css";
 import React from "react";
-import Navbar from "@/components/layout/Navbar";
-import Sidebar from "@/components/layout/Sidebar";
-import QueryProvider from "@/components/providers/QueryProvider";
+import Navbar from "../components/layout/Navbar";
+import Sidebar from "../components/layout/Sidebar";
+import QueryProvider from "../components/providers/QueryProvider";
 
 export const metadata = {
   title: "EV Gap Analyser — Visakhapatnam",

@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { ChargerProperties } from "@/types";
+import { ChargerProperties } from "../../types";
 import { X, Zap, Plug, ShieldCheck, MapPin, Calendar, Activity } from "lucide-react";
-import { formatDate } from "@/lib/formatters";
+import { formatDate } from "../../lib/formatters";
 
 interface StationDrawerProps {
   charger: ChargerProperties | null;

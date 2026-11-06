@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { fetchCells, fetchChargers, triggerRun } from "@/lib/api";
-import CellDrawer from "@/components/drawer/CellDrawer";
-import { CellProperties } from "@/types";
+import { fetchCells, fetchChargers, triggerRun } from "../../lib/api";
+import CellDrawer from "../../components/drawer/CellDrawer";
+import { CellProperties } from "../../types";
 
-const MapView = dynamic(() => import("@/components/map/MapView"), {
+const MapView = dynamic(() => import("../../components/map/MapView"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 text-sm font-medium">
