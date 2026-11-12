@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ds_bee_chargers",
+    "name": "BEE EV Public Charging Station Database",
+    "source": "Bureau of Energy Efficiency (BEE), Ministry of Power, GoI",
+    "url": "https://beeindia.gov.in/en/programmes/e-mobility",
+    "retrieved_at": "2024-10-15T10:00:00Z",
+    "licence": "Government Open Data License - India (GODL)",
+    "is_demo": true,
+    "description": "Registered public commercial charging stations in Andhra Pradesh with connector types, power ratings, and locations."
+  },
+  {
+    "id": "ds_osm_features",
+    "name": "OpenStreetMap Road Network & Urban POIs",
+    "source": "OpenStreetMap Contributors",
+    "url": "https://www.openstreetmap.org",
+    "retrieved_at": "2024-11-01T12:00:00Z",
+    "licence": "Open Data Commons Open Database License (ODbL)",
+    "is_demo": true,
+    "description": "Highway graph, commercial POIs, electrical substations, transit stations, and parking polygons."
+  },
+  {
+    "id": "ds_vahan_registrations",
+    "name": "Vahan EV Registration Statistics",
+    "source": "Ministry of Road Transport and Highways (MoRTH) - Vahan Dashboard",
+    "url": "https://vahan.parivahan.gov.in/vahan4dashboard/",
+    "retrieved_at": "2024-10-31T08:30:00Z",
+    "licence": "Public Domain / MoRTH Data Portal",
+    "is_demo": true,
+    "description": "District-level EV adoption figures for Visakhapatnam North, South, and Gajuwaka RTOs categorized by vehicle class (2W, 3W, 4W)."
+  },
+  {
+    "id": "ds_worldpop_census",
+    "name": "Census of India & WorldPop 100m Gridded Population",
+    "source": "WorldPop / Registrar General & Census Commissioner of India",
+    "url": "https://www.worldpop.org",
+    "retrieved_at": "2024-09-20T14:15:00Z",
+    "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "is_demo": true,
+    "description": "Disaggregated residential and daytime population estimates projected for Greater Visakhapatnam Municipal Corporation (GVMC) wards."
+  },
+  {
+    "id": "ds_grid_substations",
+    "name": "APEPDCL Power Infrastructure & Substations",
+    "source": "Andhra Pradesh Eastern Power Distribution Company Limited (APEPDCL)",
+    "url": "https://www.apeasternpower.com",
+    "retrieved_at": "2024-10-05T09:00:00Z",
+    "licence": "State Utility Public Infrastructure Disclosure",
+    "is_demo": true,
+    "description": "33/11kV and 132/33kV distribution substations with location and transformer headroom estimates."
+  }
+]

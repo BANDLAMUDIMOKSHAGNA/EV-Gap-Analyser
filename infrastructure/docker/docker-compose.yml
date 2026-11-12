@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: ev_gap_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-ev_gap_analyser}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  osrm:
+    image: osrm/osrm-backend:latest
+    container_name: ev_gap_osrm
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./osrm:/data
+    command: osrm-routed --algorithm mld /data/andhra-pradesh-latest.osrm
+    # Only active when OSM map data is downloaded into ./osrm
+
+  api:
+    build:
+      context: ..
+      dockerfile: apps/api/Dockerfile
+    container_name: ev_gap_api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/ev_gap_analyser
+      - ROUTING_PROVIDER=approximate
+      - OSRM_URL=http://osrm:5000
+      - DATA_MODE=demo
+      - JWT_SECRET=super-secret-key-for-ev-gap-analyser-2026
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: Dockerfile
+    container_name: ev_gap_web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_DATA_MODE=demo
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
